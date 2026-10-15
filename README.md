@@ -6,11 +6,11 @@ We establish an exact orbit quotient for weighted many-to-one allocation with lo
 
 #### Dependencies
 
-The reference Python version is 3.12.7. MILPs are solved with HiGHS through `scipy.optimize.milp`, using the following dependencies:
+The reference Python version is 3.12.7. The Docker image uses `ubuntu:26.04` with the following dependencies:
 
 * NumPy 2.3.5
 * SciPy 1.17.0
-* NetworkX 3.7
+* NetworkX 3.6.1
 * Matplotlib 3.10.8
 * psutil 7.2.2
 * PyYAML 6.0.3
@@ -18,7 +18,8 @@ The reference Python version is 3.12.7. MILPs are solved with HiGHS through `sci
 #### Installation
 
 ```bash
-python -m pip install numpy==2.3.5 scipy==1.17.0 networkx==3.7 matplotlib==3.10.8 psutil==7.2.2 PyYAML==6.0.3
+docker build --pull -f docker/Dockerfile -t orbit-quot:latest .
+docker run --rm orbit-quot:latest
 ```
 
 #### License (MIT)
